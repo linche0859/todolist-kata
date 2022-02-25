@@ -1,4 +1,4 @@
-# Node.js 直播班的 Todoliat Kata 練習
+# Node.js 直播班的 Todolist Kata 練習
 
 ## 啟用服務
 
