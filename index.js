@@ -13,10 +13,8 @@ import {
   deleteTodos,
   deleteTodo,
 } from './src/main';
-import 'dotenv/config';
 
-const baseUrl = process.env.API_URL;
-const serverPort = process.env.SERVER_PORT;
+const baseUrl = '/todos';
 const requestListener = async (request, response) => {
   const { url, method } = request;
   let statusCode = 200;
@@ -84,7 +82,9 @@ const requestListener = async (request, response) => {
   response.end();
 };
 
-const server = http.createServer(requestListener).listen(serverPort);
+const server = http
+  .createServer(requestListener)
+  .listen(process.env.PORT || 8080);
 
 console.log('Server is up and running');
 
