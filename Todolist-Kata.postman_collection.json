@@ -1,0 +1,379 @@
+{
+	"info": {
+		"_postman_id": "d7869159-bf2d-401a-a0a4-f66e775a6bbf",
+		"name": "Todolist-Kata",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "取得所有代辦事項",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/todos",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "回傳結果",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://cryptic-badlands-14287.herokuapp.com/todos",
+							"protocol": "https",
+							"host": [
+								"cryptic-badlands-14287",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"todos"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"status\": \"success\",\r\n    \"data\": [\r\n        {\r\n            \"id\": \"41db6b1f-a1f8-41de-bf1d-c8ecc3da4d7e\",\r\n            \"title\": \"今天要運動\",\r\n            \"created-time\": \"2022-02-25T08:16:07.278Z\"\r\n        }\r\n    ]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "新增代辦事項",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"今天要運動\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/todos",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "回傳結果",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"今天要運動\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://cryptic-badlands-14287.herokuapp.com/todos",
+							"protocol": "https",
+							"host": [
+								"cryptic-badlands-14287",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"todos"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"id\": \"41db6b1f-a1f8-41de-bf1d-c8ecc3da4d7e\",\n            \"title\": \"今天要運動\",\n            \"created-time\": \"2022-02-25T08:16:07.278Z\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "資料錯誤的回傳結果",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://cryptic-badlands-14287.herokuapp.com/todos",
+							"protocol": "https",
+							"host": [
+								"cryptic-badlands-14287",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"todos"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"status\": \"error\",\n    \"message\": \"欄位未填寫正確\"\n}"
+				}
+			]
+		},
+		{
+			"name": "編輯指定代辦事項",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"今天要學習\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/todos/8fbba29a-0adf-4d02-877f-0932feb11f3a",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"todos",
+						"8fbba29a-0adf-4d02-877f-0932feb11f3a"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "回傳結果",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"今天要學習\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://cryptic-badlands-14287.herokuapp.com/todos/8fbba29a-0adf-4d02-877f-0932feb11f3a",
+							"protocol": "https",
+							"host": [
+								"cryptic-badlands-14287",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"todos",
+								"8fbba29a-0adf-4d02-877f-0932feb11f3a"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"id\": \"41db6b1f-a1f8-41de-bf1d-c8ecc3da4d7e\",\n            \"title\": \"今天要學習\",\n            \"created-time\": \"2022-02-25T08:16:07.278Z\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "代辦事項編號錯誤",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"今天要學習\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://cryptic-badlands-14287.herokuapp.com/todos/123",
+							"protocol": "https",
+							"host": [
+								"cryptic-badlands-14287",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"todos",
+								"123"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"status\": \"error\",\n    \"message\": \"格式錯誤\"\n}"
+				},
+				{
+					"name": "資料錯誤的回傳結果",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"今天要學習\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://cryptic-badlands-14287.herokuapp.com/todos/8fbba29a-0adf-4d02-877f-0932feb11f3a",
+							"protocol": "https",
+							"host": [
+								"cryptic-badlands-14287",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"todos",
+								"8fbba29a-0adf-4d02-877f-0932feb11f3a"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"status\": \"error\",\n    \"message\": \"欄位未填寫正確\"\n}"
+				}
+			]
+		},
+		{
+			"name": "刪除所有代辦事項",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/todos",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "回傳結果",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://cryptic-badlands-14287.herokuapp.com/todos",
+							"protocol": "https",
+							"host": [
+								"cryptic-badlands-14287",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"todos"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "刪除指定代辦事項",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/todos/bf465b18-217b-4db5-89c3-c9e98d4b1bbe",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"todos",
+						"bf465b18-217b-4db5-89c3-c9e98d4b1bbe"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "回傳結果",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://cryptic-badlands-14287.herokuapp.com/todos/bf465b18-217b-4db5-89c3-c9e98d4b1bbe",
+							"protocol": "https",
+							"host": [
+								"cryptic-badlands-14287",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"todos",
+								"bf465b18-217b-4db5-89c3-c9e98d4b1bbe"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": []\n}"
+				},
+				{
+					"name": "刪除指定代辦事項",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/todos/123",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"todos",
+								"123"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"status\": \"error\",\n    \"message\": \"格式錯誤\"\n}"
+				}
+			]
+		}
+	]
+}
