@@ -66,7 +66,7 @@ const requestListener = async (request, response) => {
         });
       }
       break;
-    case httpMethod.OPTIONS:
+    case method === httpMethod.OPTIONS:
       break;
     default:
       statusCode = 404;
